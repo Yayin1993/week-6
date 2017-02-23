@@ -13,7 +13,6 @@ You don't need to create HTML buttons or a useable application—this exercise i
 functions that will be used in your application. To test it out, try calling the functions in your
 console. For example, try running: clickNextButton() and see what it does. Use lots of console logs!
 ================================ */
-
 var state = {
   "slideNumber": 0, // slideNumber keeps track of what slide you are on. It should increase when you
                     // click the next button and decrease when you click the previous button. It
@@ -39,14 +38,23 @@ var state = {
 };
 
 var clickNextButton = function() {
-
+  if(state.slideNumber<5){
+  state.slideNumber=state.slideNumber+1;//Suppose that there are 5 pages in total
+  console.log(state.slideNumber);
 }
+  else console.log("This is the last page!");
+};
 
 var clickPreviousButton = function() {
-
-}
+  if(state.slideNumber>0){
+    state.slideNumber=state.slideNumber-1;
+    console.log(state.slideNumber);
+  }
+  else console.log("This is the first page!");
+};
 
 var saySlideName = function(slide) {
-  // saySlideName uses console.log to "say" the name of the slide it is given. It should run when
+  console.log(state.slideData);
+//  console.log(state.slideData[slideNumber].name);// saySlideName uses console.log to "say" the name of the slide it is given. It should run when
   // someone clicks on one of the buttons.
-}
+};
